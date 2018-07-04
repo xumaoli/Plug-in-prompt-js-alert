@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>title</title>
+</head>
+<body>
+	<span>zalert:</span><input type="button" class="zalert" value="click" class="input" name=""><br/>
+	<span>showConfirm:</span><input type="button" class="showConfirm" value="click" class="input" name="">
+	<script type="text/javascript" src="jquery-3.1.0.min.js"></script>
+	<script type="text/javascript" src="commonality.js"></script>
+
+
+<script type="text/javascript">
+	$('.zalert').click(function(){
+		zalert('title','content...');
+	})
+	$('.showConfirm').click(function(){
+		showConfirm('title','content...',function(){
+			zalert("title","confirm")
+		},function(){
+			zalert("title","cancel")
+		});
+	})
+
+	
+</script>
+</body>
+</html>

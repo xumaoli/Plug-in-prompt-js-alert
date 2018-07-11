@@ -30,6 +30,25 @@ function includeLinkStyle() {
         +'</style>'
         $('head').append(styles);
 }
+function salert(t,m){
+    //用来引入样式，如果直接写入样式stylepath设为:"";
+    includeLinkStyle(stylepath);
+    var alertstr='<div class="ymodalAlert">'+
+        '<div class="ymodalAlertBody">'+
+        '<div class="ymodalTitle">'+t+'</div>'+
+        '<div class="ymodalMsg">'+m+'</div>'+
+        '</div>'+
+        '</div>';
+
+    $("body").append(alertstr);
+
+   setTimeout(function(){
+    $(".ymodalAlert").fadeOut(function(){
+                $(".ymodalAlert").remove();               
+            })
+   },1500)
+
+}
 
 function zalert(t,m,fn){
     includeLinkStyle()
